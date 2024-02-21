@@ -11,10 +11,10 @@ public class SuDanhGia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ma_danh_gia")
     private int maDanhGia;
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @ManyToOne( cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name = "ma_nguoi_dung")
     private NguoiDung nguoiDung;
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @ManyToOne( cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name = "ma_sach")
     private Sach sach;
     @Column(name = "hang")

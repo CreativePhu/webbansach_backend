@@ -11,4 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface SachRepository extends JpaRepository<Sach, Integer> {
 
     Page<Sach> findByTenSachContainingIgnoreCase(@RequestParam("tenSach") String tenSach, Pageable pageable);
+
+    Page<Sach> findByDanhSachTheLoai_MaTheLoai(@RequestParam("maTheLoai") int maTheLoai, Pageable pageable);
+
+    Page<Sach> findByTenSachContainingAndDanhSachTheLoai_MaTheLoai(@RequestParam("tenSach") String tenSach, @RequestParam("maTheLoai") int maTheLoai, Pageable pageable);
 }
